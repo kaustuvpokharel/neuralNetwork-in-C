@@ -1,0 +1,12 @@
+*Single input Single output Neural Network*
+-> The single value is input through the neural wrong and it interacts with the weight in and gives single predicted value.
+Let's say this is a single neural networks to predict if the person is sad or happy. We can consider sad and happy to be a neumerical value,
+we could say that the number above 10 means the person is happy or else the person is sad.
+
+To interprete this simple example;
+
+int happyORsad(input, weight)
+{
+    int prediction = input * weight;
+    return prediction;
+}
