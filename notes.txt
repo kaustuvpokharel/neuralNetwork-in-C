@@ -1,5 +1,5 @@
 *Single input Single output Neural Network*
--> The single value is input through the neural wrong and it interacts with the weight in and gives single predicted value.
+-> The single value is input through the neural network and it interacts with the weight in and gives single predicted value.
 Let's say this is a single neural networks to predict if the person is sad or happy. We can consider sad and happy to be a neumerical value,
 we could say that the number above 10 means the person is happy or else the person is sad.
 
@@ -11,4 +11,15 @@ int happyORsad(input, weight)
     return prediction;
 }
 
-Let's see how this workes.
+*Single input Multiple output Neural Network*
+-> Multiple values can be sent through the input and it interacts with unique weights and gives multiple out puts.
+
+To interprete this simple example;
+
+void (input, weight, output)
+{
+    for(int i =0; i < length_of_weight; i++)
+    {
+        output[i] = input * weight[i];
+    }
+}
