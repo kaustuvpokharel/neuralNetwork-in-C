@@ -24,3 +24,29 @@ double multipleInSingleOut(double*input, double* weight, int LEN)
 
     return prediction;
 }
+
+void matrixVectorMultiply(double* input,
+                        int inputLEN,
+                        double* output,
+                        int outputLEN,
+                        double weight[outputLEN][inputLEN])
+{
+    for(int i = 0; i < outputLEN; i++)
+    {
+        for(int j = 0; j <inputLEN; j++)
+        {
+            output[i] += input[j] * weight[i][j];
+        }
+    }
+
+}
+
+void multipleInputMultipleOutput(double* input,
+                        int inputLEN,
+                        double* output,
+                        int outputLEN,
+                        double weight[outputLEN][inputLEN])
+{
+    matrixVectorMultiply(input, inputLEN, output, outputLEN, weight);
+}
+

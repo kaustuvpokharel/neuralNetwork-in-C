@@ -23,3 +23,52 @@ void (input, weight, output)
         output[i] = input * weight[i];
     }
 }
+
+*Multiple input Single output Neural Network*
+-> 
+
+To interprete this simple example;
+double weightedSum( double* input, double* weight, int LEN)
+{
+    double output;
+    for(int i = 0; i < LEN; i++)
+    {
+        output += input[i] * weight[i];
+    }
+    return output;
+}
+
+double multipleInSingleOut(double*input, double* weight, int LEN)
+{
+    double prediction;
+    prediction = weightedSum(input, weight, LEN);
+
+    return prediction;
+}
+
+*Multiple input multiple output*
+-> This is nothing but a sequence of multiple input single output neural network.
+
+void matrixVectorMultiply(double* input,
+                        int inputLEN,
+                        double* output,
+                        int outputLEN,
+                        double weight[outputLEN][inputLEN])
+{
+    for(int i = 0; i < outputLEN; i++)
+    {
+        for(int j = 0; j <inputLEN; j++)
+        {
+            output[i] += input[j] * weight[i][j];
+        }
+    }
+}
+
+void multipleInputMultipleOutput(double* input,
+                                int inputLEN,
+                                double* output,
+                                int outputLEN,
+                                double weight[outputLEN][inputLEN])
+{
+    matrixVectorMultiply(input, inputLEN, output, outputLEN, weight);
+}
