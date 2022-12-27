@@ -11,11 +11,18 @@ void matrixVectorMultiply(double* input,
                         double* output,
                         int outputLEN,
                         double weight[outputLEN][inputLEN]);
-                        
+
 void multipleInputMultipleOutput(double* input,
                         int inputLEN,
                         double* output,
                         int outputLEN,
                         double weight[outputLEN][inputLEN]);
-
+                        
+void hiddenLayerNN(double* input,
+                    int inputLEN,
+                    int hiddenLEN,
+                    double INhiddenweight[hiddenLEN][inputLEN],
+                    int outputLEN,
+                    double OUThiddenweight[outputLEN][hiddenLEN],
+                    double* output);
 #endif // Ending Header guardd

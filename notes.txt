@@ -72,3 +72,10 @@ void multipleInputMultipleOutput(double* input,
 {
     matrixVectorMultiply(input, inputLEN, output, outputLEN, weight);
 }
+
+*Multiple input multiple output with HIDDEN LAYER*
+-> The concept is similar to "multiple input and multiple out" neural network, but with some extra layers underneath. Here, there will be inputs
+with specific weights, by doing vector multiplication between list of inputs and weights the resulted out will again act as a input to some other
+specific weight and generating output.
+
+

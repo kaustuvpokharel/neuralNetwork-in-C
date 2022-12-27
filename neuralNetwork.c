@@ -4,7 +4,7 @@
 // {
 //     double prediction = input * weight;
 //     return prediction;
-// }
+// } 
 
 double weightedSum( double* input, double* weight, int LEN)
 {
@@ -42,11 +42,24 @@ void matrixVectorMultiply(double* input,
 }
 
 void multipleInputMultipleOutput(double* input,
-                        int inputLEN,
-                        double* output,
-                        int outputLEN,
-                        double weight[outputLEN][inputLEN])
+                                int inputLEN,
+                                double* output,
+                                int outputLEN,
+                                double weight[outputLEN][inputLEN])
 {
     matrixVectorMultiply(input, inputLEN, output, outputLEN, weight);
 }
 
+void hiddenLayerNN(double* input,
+                    int inputLEN,
+                    int hiddenLEN,
+                    double INhiddenweight[hiddenLEN][inputLEN],
+                    int outputLEN,
+                    double OUThiddenweight[outputLEN][hiddenLEN],
+                    double* output)
+{
+    double hiddenOutput[hiddenLEN];
+    matrixVectorMultiply(input, inputLEN, hiddenOutput, hiddenLEN, INhiddenweight);
+    matrixVectorMultiply(hiddenOutput, hiddenLEN, output, outputLEN, OUThiddenweight);
+
+}
