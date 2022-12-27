@@ -5,18 +5,18 @@
 #define outputLEN 3
 #define hiddenLEN 3
 
-double temperature[] = {12,23,50,-10,60};
-double humidity[] = {60, 65, 70, 75, 50};
-double airQuality[] = {70, 147, 160, 98};
+double temperature[] = {30,23,50,-10,60};
+double humidity[] = {87, 65, 70, 75, 50};
+double airQuality[] = {110, 147, 160, 98};
   
-double INhiddenweight[hiddenLEN][inputLEN]= {{-2,   9.5,  1},
-                                            {-0.8, 6.1, 2.5},
-                                            {0.5, 0.45, 0.9}
+double INhiddenweight[hiddenLEN][inputLEN]= {{-2,   9.5,  2.01},
+                                            {-0.8, 7.2, 6.3},
+                                            {-0.5, 0.45, 0.9}
                                             };
 
-double OUThiddenweight[outputLEN][hiddenLEN]= {{-0.8, 6.1, 2.5},
-                                                {0.5, 0.45, 0.9},
-                                                {-2,   9.5,  1}
+double OUThiddenweight[outputLEN][hiddenLEN]= {{-1.0, 1.15, 0.11},
+                                                {-0.18, 0.15, -0.01},
+                                                {0.25,   -0.25,  -0.1}
                                                 };
 int main()
 {
