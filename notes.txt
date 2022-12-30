@@ -78,4 +78,36 @@ void multipleInputMultipleOutput(double* input,
 with specific weights, by doing vector multiplication between list of inputs and weights the resulted out will again act as a input to some other
 specific weight and generating output.
 
+void hiddenLayerNN(double* input,
+                    int inputLEN,
+                    int hiddenLEN,
+                    double INhiddenweight[hiddenLEN][inputLEN],
+                    int outputLEN,
+                    double OUThiddenweight[outputLEN][hiddenLEN],
+                    double* output)
+{
+    double hiddenOutput[hiddenLEN];
+    matrixVectorMultiply(input, inputLEN, hiddenOutput, hiddenLEN, INhiddenweight);
+    matrixVectorMultiply(hiddenOutput, hiddenLEN, output, outputLEN, OUThiddenweight);
+}
+
+
+*Error Calculation In the prediction*
+-> By the defination error simply is the difference of predicted value by actual value.
+
+double errorCalc(double input, double weight, double actualOutput)
+{
+    double error = (input * weight) - actualOutput;
+    return powf(error, 2);
+}
+    // Here, in the above function we have power of 2(sq.) to the error, to keep it positive and distinct.
+
+We are not going to use this fuction in the code, as we have already calculated the input*weight in the previous functions,
+we are just going to substract the output with the actual/expected output value.
+
+double lossFunction(double yhat, double y)
+{
+    return powf((yhat -  y), 2);
+}                                                   // This is a function representing the above statement.
+                                                    // yhat : output & y : actualOutput
 

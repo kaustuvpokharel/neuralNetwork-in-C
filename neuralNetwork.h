@@ -25,4 +25,7 @@ void hiddenLayerNN(double* input,
                     int outputLEN,
                     double OUThiddenweight[outputLEN][hiddenLEN],
                     double* output);
+
+double lossFunction(double yhat, double y);
+
 #endif // Ending Header guardd

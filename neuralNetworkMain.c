@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<math.h>
 #include "neuralNetwork.h"
 #include "neuralNetwork.c"
 #define inputLEN 3
@@ -23,10 +24,12 @@ int main()
     double hiddenOutput[hiddenLEN];
     double output[outputLEN];
     double input[] = {temperature[0], humidity[0], airQuality[0]};
+    double actualOutput[] = {500, 15, -80};
 
     hiddenLayerNN(input, inputLEN, hiddenLEN, INhiddenweight, outputLEN, OUThiddenweight, output);
     for(int i =0; i<outputLEN; i++)
     {
         printf("The predicted resulkt is: %.2lf \n", output[i]);
+        printf("The error received is %.2lf \n", lossFunction(output[i],actualOutput[i]));
     }
 }

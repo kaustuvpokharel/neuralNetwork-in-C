@@ -62,3 +62,14 @@ void hiddenLayerNN(double* input,
     matrixVectorMultiply(hiddenOutput, hiddenLEN, output, outputLEN, OUThiddenweight);
 
 }
+
+double errorCalc(double input, double weight, double actualOutput)
+{
+    double error = (input * weight) - actualOutput;
+    return powf(error, 2);
+}
+
+double lossFunction(double yhat, double y)
+{
+    return powf((yhat -  y), 2);
+}
