@@ -111,3 +111,15 @@ double lossFunction(double yhat, double y)
 }                                                   // This is a function representing the above statement.
                                                     // yhat : output & y : actualOutput
 
+*Tensor*
+-> Simple way to understand Tensor can be by visualizing vector matrix, but with some differences.
+Tensor with only one element is Scalar Tensor.
+    a = {2};
+Tensor with series of element as one dimension is called Vector tensor.
+    a = {1, 2, 3, 6, 4};
+Tensor with more more rows are called 3D Tensor, which can be expressed in a similar was as a Matrix.
+a = {{1,2},{3,4}}           |1  2|
+                            |3  4|
+    Shape of the tensor is simply the dimension of data, similar to (rows)x(columns) in matrix to fix the size.
+    shape(axes, ranks)
+

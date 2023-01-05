@@ -9,7 +9,7 @@
 double weightedSum( double* input, double* weight, int LEN)
 {
     double output;
-    for(int i = 0; i < LEN; i++)
+    for(int i = 0; i < LEN; i++) //
     {
         output += input[i] * weight[i];
     }
@@ -35,7 +35,7 @@ void matrixVectorMultiply(double* input,        //  A G H O R I I
     {
         for(int j = 0; j <inputLEN; j++)
         {
-            output[i] += input[j] * weight[i][j];
+            output[i] += input[j] * weight[i][j]; //just vector mutiply performed by the help of loop, used for loop to access each element individually.
         }
     }
 }
