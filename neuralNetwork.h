@@ -28,4 +28,10 @@ void hiddenLayerNN(double* input, // This fuctions takes hidden layers and also 
 
 double lossFunction(double yhat, double y);// This fuction will calculate the error of by differencing the predicted output to actual output.
 
+void bruteForceLearning( double input,
+                        double weight,
+                        double actualOutput,
+                        double stepAmount,
+                        int ephocs);
+
 #endif // Ending Header guardd

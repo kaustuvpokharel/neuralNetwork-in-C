@@ -73,3 +73,35 @@ double lossFunction(double yhat, double y)
 {
     return powf((yhat -  y), 2);
 }
+
+void bruteForceLearning( double input,
+                        double weight,
+                        double actualOutput,
+                        double stepAmount,
+                        int ephocs)
+{
+    double prediction, error;
+    double positivePrediction, pError, negativePrediction, nError;
+
+    for(int i = 0; i < ephocs; i++)
+    {
+        prediction = input * weight;
+        error = powf((prediction - actualOutput), 2);
+        printf("Ephocs: [%d] Error : %f  ______  Prediction : %lf \r \n",i, error, prediction);
+
+        positivePrediction = input * (weight + stepAmount);
+        pError = powf((positivePrediction - actualOutput), 2);
+
+        negativePrediction = input * (weight - stepAmount);
+        nError = powf((negativePrediction - actualOutput), 2);
+
+        if(nError < pError)
+        {
+            weight = weight - stepAmount;
+        }
+        if(nError > pError)
+        {
+            weight = weight + stepAmount;
+        }
+    }
+}
