@@ -1,3 +1,10 @@
 *Normalization*
+We normalize data to make the dataset under same treshold to minimize the data difference. There are few techniques to normalize data.
+We can always choose to use different formulas and see which one can work best for our work. Or we can always try to built our own algorithm, if capable.
+
+Here we are normalizing the data by diving the datas by the largest data. Formula :
 
 Xnor = (X / X max)
+
+*Weight Initialization*
+

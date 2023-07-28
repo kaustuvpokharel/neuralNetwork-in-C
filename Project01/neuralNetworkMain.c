@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include<math.h>
+#include<stdlib.h>
+
 #include "neuralNetwork.h"
 #include "neuralNetwork.c"
 

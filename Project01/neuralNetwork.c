@@ -128,3 +128,9 @@ void normalizeData(double * input, double * output, int LEN)
 
 
 }
+
+void randomWeights(int inputLEN, int hiddenLEN, double* weightMatrix[inputLEN][hiddenLEN])
+{
+    srand(2);
+    for(int i = 0; i < )
+}
