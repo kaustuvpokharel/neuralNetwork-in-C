@@ -2,11 +2,14 @@
 #include<math.h>
 #include<stdlib.h>
 
+
 #include "neuralNetwork.h"
 #include "neuralNetwork.c"
 
 #define noOfFeatures 2 //n values
 #define noOfExamples 3 // m values
+#define noOfHiddenNodes 3 //hidden node
+#define noOfOutputNodes 1 // output node
 
 /* Hours of Workout */
 double x1[noOfExamples] = {2, 5, 1};
@@ -20,30 +23,30 @@ double x2Nor[noOfExamples];
 double y[noOfExamples] = {200, 90, 190};
 double yNor[noOfExamples];
 
+double syn0[noOfHiddenNodes][noOfFeatures];
+double syn1[noOfOutputNodes][noOfHiddenNodes];
+
 int main()
 {
-    normalizeData(x1, x1Nor, noOfExamples);
-    normalizeData(x2, x2Nor, noOfExamples);
-    normalizeData(y, yNor, noOfExamples);
-
-    printf("Normalized x1 data: \n\r ");
-    for (int i = 0; i < noOfExamples; i++)
+    randomWeights(noOfHiddenNodes, noOfFeatures, syn0);
+    randomWeights(noOfOutputNodes, noOfHiddenNodes, syn1);
+    /*for syn0 random weight*/
+    for(int i = 0; i < noOfHiddenNodes; i++)
     {
-        printf("%f \t", x1Nor[i]);
+        for(int j = 0; j < noOfFeatures; j++)
+        {
+            printf("%f \t", syn0[i][j]);
+        }
+        printf("\n");
     }
-    printf("\n\r");
-
-    printf("Normalized x2 data: \n\r ");
-    for (int i = 0; i < noOfExamples; i++)
+    printf("\n");
+    /*for syn1 random weight*/
+    for(int i = 0; i < noOfOutputNodes; i++)
     {
-        printf("%f \t", x2Nor[i]);
+        for(int j = 0; j < noOfHiddenNodes; j++)
+        {
+            printf("%f \t", syn0[i][j]);
+        }
+        printf("\n");
     }
-    printf("\n\r");
-
-    printf("Normalized y data: \n\r ");
-    for (int i = 0; i < noOfExamples; i++)
-    {
-        printf("%f \t", yNor[i]);
-    }
-    printf("\n\r");
 }

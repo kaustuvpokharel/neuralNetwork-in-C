@@ -35,4 +35,6 @@ void bruteForceLearning( double input,
                         int ephocs);
 
 void normalizeData(double * input, double * output, int LEN);
+
+void randomWeights(int hiddenLEN, int inputLEN, double weightMatrix[hiddenLEN][inputLEN]);
 #endif // Ending Header guardd
