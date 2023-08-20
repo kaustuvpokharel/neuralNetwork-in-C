@@ -144,3 +144,30 @@ void randomWeights(int hiddenLEN, int inputLEN, double weightMatrix[hiddenLEN][i
         }
     }
 }
+
+void normalizeData2D(int ROW, int COL, double input[ROW][COL], double output[ROW][COL])
+{
+    /*Finding MAX in a matrix*/
+    double max = -999999999;
+    for(int i = 0; i < ROW; i ++)
+    {
+        for(int j = 0; j < COL; j++)
+        {
+            if(max < input[i][j])
+            {
+                max = input[i][j];
+            }
+        }
+    }
+    /* Normalizing */
+
+    for(int i = 0; i < ROW; i++)
+    {
+        for(int j = 0; j < COL; j++)
+        {
+            output[i][j] = input[i][j] / max;
+        }
+    }
+
+
+}

@@ -37,4 +37,6 @@ void bruteForceLearning( double input,
 void normalizeData(double * input, double * output, int LEN);
 
 void randomWeights(int hiddenLEN, int inputLEN, double weightMatrix[hiddenLEN][inputLEN]);
+
+void normalizeData2D(int ROW, int COL, double input[ROW][COL], double output[ROW][COL]);
 #endif // Ending Header guardd

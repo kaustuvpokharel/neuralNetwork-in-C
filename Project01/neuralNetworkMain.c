@@ -11,20 +11,24 @@
 #define noOfHiddenNodes 3 //hidden node
 #define noOfOutputNodes 1 // output node
 
-/* Hours of Workout */
-double x1[noOfExamples] = {2, 5, 1};
-double x1Nor[noOfExamples];
+double xraw [noOfFeatures][noOfExamples] ={{2, 5, 1},
+                                           {8, 5, 8}};
 
-/* Hours of Rest */
-double x2[noOfExamples] = {8, 5, 8};
-double x2Nor[noOfExamples];
+double yraw[1][noOfExamples]= {{200, 90, 190}};
 
-/* Muscle Gain */
-double y[noOfExamples] = {200, 90, 190};
-double yNor[noOfExamples];
+/*To hold the normalized data of x and y*/
+double trainX [noOfFeatures][noOfExamples];
+double trainY [1][noOfExamples];
 
 double syn0[noOfHiddenNodes][noOfFeatures];
-double syn1[noOfOutputNodes][noOfHiddenNodes];
+double syn1[noOfHiddenNodes];
+
+double trainX_eng1[noOfFeatures];
+double trainY_eng1;
+double z1_eng1[noOfHiddenNodes];
+double a1_eng1[noOfHiddenNodes];
+double z2_eng1;
+double yhat_eng1;
 
 int main()
 {
